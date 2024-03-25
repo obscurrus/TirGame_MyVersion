@@ -2,6 +2,7 @@ import pygame
 import random
 import os
 
+
 pygame.init()
 ''' параметры окна'''
 SCREEN_W = 1024
