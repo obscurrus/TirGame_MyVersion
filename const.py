@@ -1,21 +1,29 @@
 import pygame
 import random
+import os
 
 pygame.init()
-
-SCREEN_W = 800
-SCREEN_H = 600
+''' параметры окна'''
+SCREEN_W = 1024
+SCREEN_H = 768
 screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
 
 pygame.display.set_caption("Игра Тир v0.2a")
 icon = pygame.image.load('img/icon.jpg')
 pygame.display.set_icon(icon)
+color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-target_img = pygame.image.load('img/tgt1_80.png')
-target_w = 80
-target_h = 80
+''' параметры цели '''
+tgt_folder_path = 'tgt_img'
+files = os.listdir(tgt_folder_path)
+random_file = random.choice(files)
+random_file_path = os.path.join(tgt_folder_path, random_file)
+
+target_img = pygame.image.load(random_file_path)
+target_w, target_h = target_img.get_size()
 
 target_x = random.randint(0, SCREEN_W - target_w)
 target_y = random.randint(0, SCREEN_H - target_h)
 
-color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+print(random_file_path)
+print(target_w, target_h)
