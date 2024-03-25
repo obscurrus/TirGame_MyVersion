@@ -10,4 +10,4 @@ def newtgt():
 
     target_x = random.randint(0, SCREEN_W - target_w)
     target_y = random.randint(0, SCREEN_H - target_h)
-    return target_x, target_y, target_w, target_h, target_img
+    return target_x, target_y, target_w, target_h, target_img, random_file_path
