@@ -16,14 +16,8 @@ color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 ''' параметры цели '''
 tgt_folder_path = 'tgt_img'
 files = os.listdir(tgt_folder_path)
-random_file = random.choice(files)
-random_file_path = os.path.join(tgt_folder_path, random_file)
 
-target_img = pygame.image.load(random_file_path)
-target_w, target_h = target_img.get_size()
 
-target_x = random.randint(0, SCREEN_W - target_w)
-target_y = random.randint(0, SCREEN_H - target_h)
 
-print(random_file_path)
-print(target_w, target_h)
+#print(random_file_path)
+#print(target_w, target_h)
