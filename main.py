@@ -1,7 +1,4 @@
-import random
-
 from tir_func import *
-import time
 
 target_img = None
 running = True
