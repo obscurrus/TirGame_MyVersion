@@ -20,14 +20,18 @@ while running:
             running = False
 
         if event.type == pygame.MOUSEBUTTONDOWN:
+
             mouse_x, mouse_y = pygame.mouse.get_pos()
             if target_x < mouse_x < target_x + target_w and target_y < mouse_y < target_y + target_h:
+                # воспроизвести звуковой эффект
+                click_sound.play()
                 if 's' in file_path:
                     score += 5
                 else:
                     score += 1
                 target_x, target_y, target_w, target_h, target_img, file_path = newtgt()
             else:
+                click_mimo_sound.play()
                 mouse_x = -100
                 mouse_y = -100
 

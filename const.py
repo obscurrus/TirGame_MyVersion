@@ -16,6 +16,11 @@ pygame.display.set_icon(icon)
 color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 font = pygame.font.Font(None, 36)
 
+'''  заставка '''
+splash_img = pygame.image.load('img/bang.png')
+
+
+
 ''' параметры цели '''
 tgt_folder_path = 'tgt_img'
 files = os.listdir(tgt_folder_path)
@@ -25,5 +30,19 @@ target_img = None
 nxt_tgt_time = time.time()
 score = 0
 
+# загрузить звуковой эффект
+click_sound = pygame.mixer.Sound('shoot.wav')
+# загрузить звук промазал
+click_mimo_sound = pygame.mixer.Sound('mimo.wav')
+# загрузить музыкальный файл
+pygame.mixer.music.load('musik.mp3')
+
+
 #print(random_file_path)
 #print(target_w, target_h)
+# загрузить изображение заставки
+splash_img = pygame.image.load('img/bang.png')
+
+
+# воспроизвести музыку в бесконечном цикле
+pygame.mixer.music.play(-1)
