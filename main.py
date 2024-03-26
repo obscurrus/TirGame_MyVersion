@@ -1,7 +1,9 @@
 from tir_func import *
 
 running = True
-score_change = 0
+shoot_img = pygame.image.load('img/bang_s.png')  # загрузить изображение выстрела
+mouse_x = -100
+mouse_y = -100
 
 while running:
     screen.fill(color)
@@ -10,7 +12,8 @@ while running:
     if target_img is None or crnt_time >= nxt_tgt_time:
         target_x, target_y, target_w, target_h, target_img, file_path = newtgt()
         nxt_tgt_time = crnt_time + random.uniform(1, 2)
-        bonus_txt = None
+        mouse_x = -100
+        mouse_y = -100
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -24,9 +27,11 @@ while running:
                 else:
                     score += 1
                 target_x, target_y, target_w, target_h, target_img, file_path = newtgt()
+            else:
+                mouse_x = -100
+                mouse_y = -100
 
-            scr_change_txt = font.render('+' + str(score_change), True, (255, 255, 255))
-            screen.blit(scr_change_txt, (mouse_x + 20, mouse_y + 20))
+    screen.blit(shoot_img, (mouse_x - 64, mouse_y - 64))  # отобразить Surface в месте клика мыши
 
     screen.blit(target_img, (target_x, target_y))
     scr_text = font.render('Score: ' + str(score), True, (255, 255, 255))
