@@ -21,13 +21,12 @@ while running:
             if target_x < mouse_x < target_x + target_w and target_y < mouse_y < target_y + target_h:
                 if 's' in file_path:
                     score += 5
-                    bonus_text = font.render("+3", True, (255, 255, 255))
                 else:
-                    score_change = 1
                     score += 1
                 target_x, target_y, target_w, target_h, target_img, file_path = newtgt()
-            scr_cahge_txt = font.render('+' + str(score_change), True, (255, 255, 255))
-            screen.blit(scr_cahge_txt, (mouse_x, mouse_y))
+
+            scr_change_txt = font.render('+' + str(score_change), True, (255, 255, 255))
+            screen.blit(scr_change_txt, (mouse_x + 20, mouse_y + 20))
 
     screen.blit(target_img, (target_x, target_y))
     scr_text = font.render('Score: ' + str(score), True, (255, 255, 255))
