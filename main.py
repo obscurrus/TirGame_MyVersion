@@ -1,10 +1,5 @@
 from tir_func import *
 
-running = True
-shoot_img = pygame.image.load('img/bang_s.png')  # загрузить изображение выстрела
-mouse_x = -100
-mouse_y = -100
-
 while running:
     screen.fill(color)
     crnt_time = time.time()

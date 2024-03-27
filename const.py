@@ -16,11 +16,6 @@ pygame.display.set_icon(icon)
 color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 font = pygame.font.Font(None, 36)
 
-'''  заставка '''
-splash_img = pygame.image.load('img/bang.png')
-
-
-
 ''' параметры цели '''
 tgt_folder_path = 'tgt_img'
 files = os.listdir(tgt_folder_path)
@@ -38,10 +33,11 @@ click_mimo_sound = pygame.mixer.Sound('mimo.wav')
 pygame.mixer.music.load('musik.mp3')
 
 
-#print(random_file_path)
-#print(target_w, target_h)
-# загрузить изображение заставки
-splash_img = pygame.image.load('img/bang.png')
+running = True
+shoot_img = pygame.image.load('img/bang_s.png')  # загрузить изображение выстрела
+mouse_x = -100
+mouse_y = -100
+
 
 
 # воспроизвести музыку в бесконечном цикле
